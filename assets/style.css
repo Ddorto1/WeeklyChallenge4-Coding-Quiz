@@ -1,0 +1,55 @@
+body {
+    background-color:black;
+    color: red; 
+    text-align: center;
+}
+
+h1 {
+    font-size: 100px;
+    text-shadow: coral;
+    margin: 25px, auto, 25px, 10px;
+    display: block;
+}
+
+p {
+    font-size: 30px;  
+    margin: auto, 100px, auto, 100px;  
+}
+
+.scores{
+    margin-bottom: 25px;
+    float: left;
+    display: inline;
+    font-size: 30px;
+    color: white;
+    background-color: orange;
+}
+.timer {
+    float: right;
+    text-align: right;
+}
+
+.timer-sec {
+    float: right;
+    text-align: right;
+}
+
+#start {
+    padding: 15px 32px;
+    font-size: 30px;
+    color: white;
+    background-color: orange;
+    margin-top: 25px;
+    opacity: 5;
+    transition: 0.3s;
+}
+
+.next {
+    padding: 15px 32px;
+    font-size: 30px;
+    color: white;
+    background-color: orange;
+    margin-top: 25px;
+    opacity: 5;
+    transition: 0.3s;
+}
