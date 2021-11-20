@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Coding Quiz</title>
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
+
 <body>
+
+    <div> <button class="scores"> High Scores </button> </div>
+    <div class="timer">Time Left</div> <br>
+    <div class="timer-sec">100</div>
+
+    <div>
+        <H1>CODING QUIZ</H1>
+    </div>
+    <p>Instructions: When the start button is pressed the timer will start. You will be given 5 questions in total. Each
+        incorrect answer will subtract time from your timer. High score is based off time remaining once quiz is
+        finished.</p>
+    <button id="start"> Start Quiz!!</button>
+    <div id="quiz"></div>
+    <div id="results"></div>
+    <div id="questions"></div>
+    <ul id="choices"></ul> 
+    <li id="A">A.</li><br>
+    <li id="B">B.</li><br>
+    <li  id="C">C.</li><br>
+    <li id="D">D.</li><br>
     
+    <section>
+        <div class="scoreContainer">
+        </div>
+    </section>
+    <button class="next"> Next </button>
+    <script src="./Assets/quiz.js"></script>
 </body>
+
 </html>
