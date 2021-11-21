@@ -43,8 +43,17 @@ p {
     opacity: 5;
     transition: 0.3s;
 }
+.choice{
+    padding: 15px 32px;
+    font-size: 30px;
+    color: white;
+    background-color: blue;
+    margin-top: 25px;
+    opacity: 5;
+    transition: 0.3s;
+}  
 
-.next {
+#next {
     padding: 15px 32px;
     font-size: 30px;
     color: white;
