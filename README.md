@@ -1,15 +1,15 @@
-# WeeklyChallenge4-Coding-Quiz
+# Challenge 4
+# Coding Quiz
 
-#Purpose
-Quiz in which the user is presented with coding questions. Code will be timed and will be scored at the end.
+## Purpose
+Coding quiz designed to test knowledge of basic coding knowledge
 
-#Built With
-HTML
-CSS
-Javascript
+## Built With
+* HTML
+* CSS
 
-#Website
-https://ddorto1.github.io/Code-quiz-/
+## Website
 
-#Contribution
+
+## Contribution
 Made by Dallas Dorton
