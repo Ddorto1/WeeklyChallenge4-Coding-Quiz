@@ -76,7 +76,7 @@ var questions = [
 
 function timer() {
     var timeInterval = setInterval(function () {
-
+        
         if (countdown > 0) {
             // Set the `textContent` of `timerEl` to show the remaining seconds
             timeEl.textContent = countdown;
@@ -87,7 +87,8 @@ function timer() {
             timeEl.textContent = countdown;
             // Use `clearInterval()` to stop the timer
             clearInterval(timeInterval);
-              alert ("game over");
+            alert ("game over, better luck next time");
+        
         }
     }, 1000);
 }
@@ -106,52 +107,50 @@ function renderQuestion() {
     choiceC.innerHTML= q.choiceC;
     choiceD.innerHTML= q.choiceD;
     
-    // for (var q = 0; q < q.length; q++) {
-            
+    
+    
 }
+//addEventListeners for start button click to render first question and start timer
 startEl.addEventListener("click", renderQuestion); 
 startEl.addEventListener("click", timer);
 
-    var choices = document.querySelector('.choice')
-    
+var choices = document.querySelector('.choice')
 
-    choices.addEventListener("click", function (event) {
-        // for (var i = 0; i < questions.length; i++) {
+//addEventListener to select a choice and compare to correct answer
+choices.addEventListener("click", function (event) {
+    // for (var i = 0; i < questions.length; i++) {
         var choicesAnswer = event.target.innerHTML
         console.log(choicesAnswer)
-            //  if (choicesAnswer === q[questionIndex].correctAnswer) {
-             if (choicesAnswer === questions[questionNum].correctAnswer) {
+        //  if (choicesAnswer === q[questionIndex].correctAnswer) {
+            if (choicesAnswer === questions[questionNum].correctAnswer) {
                 console.log("answer is correct")
                 alert ("answer is correct")
-                // questionNum++
-                // renderQuestion()
-                }
-
-                else {
-                    alert ("answer is incorrect")
-                    timer -= 10
-                    // questionNum++
-                    // renderQuestion()
-                }
+            }
+            
+            else {
+                alert ("answer is incorrect")
+                timer -= 10
+            }
             // }
         }
-    )     
-    var addQuestion=document.querySelector('#next')
-
-    function nextQuestion(){
-        questionNum++
-        renderQuestion()
-        console.log (questionNum)
-    }
-    
-    addQuestion.addEventListener("click", nextQuestion)
-
-//Set High Score
-var score= document.querySelector ('.scores')
-function saveScore() {
-    var userName= prompt ("Enter your name to save your score.")
-    localStorage.setItem(userName, countdown)
-}
-
-score.addEventListener('click', saveScore)
-    
+        )     
+        //Add next question function that displays next question when the Next Button is clicked
+        var addQuestion=document.querySelector('#next')
+        function nextQuestion(){
+            questionNum++
+            renderQuestion()
+            console.log (questionNum)
+        }
+        
+        addQuestion.addEventListener("click", nextQuestion)
+        
+        //Set High Score
+        var score= document.querySelector ('.scores')
+        function saveScore() {
+            var userName= prompt ("Enter your name to save your score.")
+            localStorage.setItem(userName, countdown)
+        }
+        
+        score.addEventListener('click', saveScore)
+        
+        
