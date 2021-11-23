@@ -33,11 +33,11 @@ var correct = 0;
 var questions = [
     {
         question: "Who created HTML?",
-        choiceA: "A. Larry Page", 
-        choiceB: "B. Tim Berners-Lee", 
-        choiceC: "C. Ada Lovelace",
-        choiceD: "D. Bob the Builder",
-        correctAnswer: "A. Larry Page"
+        choiceA: "Larry Page", 
+        choiceB: "Tim Berners-Lee", 
+        choiceC: "Ada Lovelace",
+        choiceD: "Bob the Builder",
+        correctAnswer: "Larry Page"
     },
     {
         question: "What does HTML stand for?",
@@ -49,26 +49,26 @@ var questions = [
     },
     {
         question: "When was javascript created?",
-        A: "1984", 
-        B:" 2001", 
-        C: "1995", 
-        D: "1987",
+        choiceA: "1984", 
+        choiceB:" 2001", 
+        choiceC: "1995", 
+        choiceD: "1987",
         correctAnswer: "1995"
     },
     {
         question: "When was HTML created? \n  A: 1955",
-        A: "1955",
-        B: "1969",
-        C: "1993",
-        D: "2000",
+        choiceA: "1955",
+        choiceB: "1969",
+        choiceC: "1993",
+        choiceD: "2000",
         correctAnswer: "1993"
     },
     {
         question: "What was javascript originally called?",
-        A: "livescript",
-        B: "java", 
-        C: "coffee",
-        D: "mocha",
+        choiceA: "livescript",
+        choiceB: "java", 
+        choiceC: "coffee",
+        choiceD: "mocha",
         correctAnswer: "mocha"
     }
 ]
@@ -96,8 +96,10 @@ function timer() {
 var lastQuestionIndex= questions.length - 1;
 var questionIndex = 0
 var choices = document.querySelector('#choice')
+var questionNum= 0 
+var q=questions[questionNum]
+
 function renderQuestion() {
-    var q=questions[questionIndex]
     question.innerHTML= "<p>"+q.question+"</p>"
     choiceA.innerHTML= q.choiceA;
     choiceB.innerHTML= q.choiceB;
@@ -110,28 +112,46 @@ function renderQuestion() {
 startEl.addEventListener("click", renderQuestion); 
 startEl.addEventListener("click", timer);
 
-    var choices = document.querySelector('#choice')
-        
+    var choices = document.querySelector('.choice')
+    
 
     choices.addEventListener("click", function (event) {
-        var choicesAnswer = event.choices.innerHTML
+        // for (var i = 0; i < questions.length; i++) {
+        var choicesAnswer = event.target.innerHTML
         console.log(choicesAnswer)
-             if (choicesAnswer === q[questionIndex].correctAnswer) {
-                 questionIndex++
-                renderQuestion()
+            //  if (choicesAnswer === q[questionIndex].correctAnswer) {
+             if (choicesAnswer === questions[questionNum].correctAnswer) {
+                console.log("answer is correct")
+                alert ("answer is correct")
+                // questionNum++
+                // renderQuestion()
                 }
+
                 else {
+                    alert ("answer is incorrect")
                     timer -= 10
-                    questionIndex++
-                    renderQuestion()
+                    // questionNum++
+                    // renderQuestion()
                 }
             // }
         }
-        )
+    )     
+    var addQuestion=document.querySelector('#next')
+
+    function nextQuestion(){
+        questionNum++
+        renderQuestion()
+        console.log (questionNum)
+    }
     
+    addQuestion.addEventListener("click", nextQuestion)
+
 //Set High Score
+var score= document.querySelector ('.scores')
 function saveScore() {
     var userName= prompt ("Enter your name to save your score.")
     localStorage.setItem(userName, countdown)
 }
 
+score.addEventListener('click', saveScore)
+    
